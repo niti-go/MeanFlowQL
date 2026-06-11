@@ -965,8 +965,8 @@ def get_config():
             consistency_alpha = 0.0,  # Consistency loss weight. 
             batch_size=256,  # Batch size.
             flow_ratio = 0.3,  # Control the rate of r==t, but we set r=0 in our experiments.  useless
-            q_agg='mean',  # Aggregation method for target Q values.
-            normalize_q_loss=False,  # Whether to normalize the Q loss.
+            q_agg='min',  # Aggregation method for target Q values.
+            normalize_q_loss=True,  # Whether to normalize the Q loss.
             noise_type = "gaussian",  # The noise type, it can be uniform and gaussian.
 
             # critic config
@@ -993,7 +993,7 @@ def get_config():
             bound_loss_weight=1.0, # Control the bound_loss weight. 
 
             # best of N 
-            num_candidates=5,  # Number of candidate actions for best-of-N selection. # hyper_paper 3 : 1 5
+            num_candidates=2,  # Number of candidate actions for best-of-N selection. # hyper_paper 3 : 1 5
             action_mode="best", # action mode: control the way we sample actions.
             
             # Alpha scheduling configuration
